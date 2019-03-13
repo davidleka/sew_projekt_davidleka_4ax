@@ -48,21 +48,20 @@ public class MainWindow extends javax.swing.JFrame {
         txtPort = new javax.swing.JTextField();
         lblID = new javax.swing.JLabel();
         lblName = new javax.swing.JLabel();
-        lblCountryCode = new javax.swing.JLabel();
-        lblDistrict = new javax.swing.JLabel();
-        lblPopulation = new javax.swing.JLabel();
-        txtDistrict = new javax.swing.JTextField();
-        txtCountryCode = new javax.swing.JTextField();
+        lblPS = new javax.swing.JLabel();
+        lblkmh = new javax.swing.JLabel();
+        txtkmh = new javax.swing.JTextField();
+        txtPS = new javax.swing.JTextField();
         txtID = new javax.swing.JTextField();
         txtName = new javax.swing.JTextField();
-        txtPopulation = new javax.swing.JTextField();
-        btnAddCity = new javax.swing.JButton();
+        btnAddAuto = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
         btnClear = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -93,11 +92,15 @@ public class MainWindow extends javax.swing.JFrame {
 
         lblName.setText("Name: ");
 
-        lblCountryCode.setText("CountryCode:");
+        lblPS.setText("PS:");
 
-        lblDistrict.setText("Population:");
+        lblkmh.setText("km/h: ");
 
-        lblPopulation.setText("District: ");
+        txtkmh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtkmhActionPerformed(evt);
+            }
+        });
 
         txtID.setEditable(false);
 
@@ -107,10 +110,10 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
-        btnAddCity.setText("Add City");
-        btnAddCity.addActionListener(new java.awt.event.ActionListener() {
+        btnAddAuto.setText("Add Auto");
+        btnAddAuto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddCityActionPerformed(evt);
+                btnAddAutoActionPerformed(evt);
             }
         });
 
@@ -137,6 +140,13 @@ public class MainWindow extends javax.swing.JFrame {
 
         jLabel1.setText("custom SQL Statement for SELECT");
 
+        jButton2.setText("Delete");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -144,8 +154,37 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator2)
-                    .addComponent(jSeparator1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator2)
+                            .addComponent(jSeparator1)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblPS)
+                                    .addComponent(lblID)
+                                    .addComponent(lblName)
+                                    .addComponent(lblkmh))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtPS, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtkmh, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(136, 136, 136)
+                                        .addComponent(jButton1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                                        .addComponent(btnBack))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(btnAddAuto, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addComponent(jButton2)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                        .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
@@ -159,37 +198,7 @@ public class MainWindow extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnDisconnect, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(btnConnect, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(9, 9, 9))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblCountryCode)
-                            .addComponent(lblID)
-                            .addComponent(lblName)
-                            .addComponent(lblPopulation)
-                            .addComponent(lblDistrict))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtCountryCode, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtDistrict, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(txtPopulation, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnAddCity))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(136, 136, 136)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnClear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jButton1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(btnBack)))))))
-                .addContainerGap())
+                            .addComponent(btnConnect, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(53, 53, 53)
                 .addComponent(jLabel1)
@@ -201,9 +210,9 @@ public class MainWindow extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblServer)
-                    .addComponent(btnConnect)
-                    .addComponent(txtServer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(txtServer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnConnect, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(lblPort)
@@ -215,7 +224,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblID)
-                    .addComponent(btnAddCity))
+                    .addComponent(btnAddAuto))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -224,26 +233,24 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtCountryCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblCountryCode))
+                            .addComponent(txtPS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblPS))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblPopulation)
-                            .addComponent(txtDistrict, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtPopulation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblDistrict)))
+                            .addComponent(lblkmh)
+                            .addComponent(txtkmh, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton1)
                             .addComponent(btnBack))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnClear)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnClear)
+                            .addComponent(jButton2))))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addContainerGap())
         );
@@ -255,33 +262,33 @@ public class MainWindow extends javax.swing.JFrame {
                 
         try {
             con = DriverManager.getConnection(
-                    "jdbc:mysql://"+txtServer.getText()+":3306/world",
+                    "jdbc:mysql://"+txtServer.getText()+":3306/davidleka_projektsew",
                     "root", "");
             
             btnConnect.setEnabled(false);
             txtServer.setEnabled(false);
             btnDisconnect.setEnabled(true);
             
-            stmt_selectAll = con.prepareStatement("SELECT * from city");
+            stmt_selectAll = con.prepareStatement("SELECT * from auto");
         res_selectAll = stmt_selectAll.executeQuery();
         
         if(res_selectAll.next()){
             int id = res_selectAll.getInt("ID");
             String name = res_selectAll.getString("Name");
-            String cc = res_selectAll.getString("Countrycode");
-            String district = res_selectAll.getString("District");
-            int population = res_selectAll.getInt("Population");
+            int ps = res_selectAll.getInt("PS");
+            int kmh = res_selectAll.getInt("kmh");
+            
             
             txtID.setText(""+id);
             txtName.setText(name);
-            txtCountryCode.setText(cc);
-            txtDistrict.setText(district);
-            txtPopulation.setText(""+population);
+            txtPS.setText(""+ps);
+            txtkmh.setText(""+kmh);
+            
         }else{
             res_selectAll.beforeFirst();
        
         }
-        stmd_add = con.prepareStatement("INSERT INTO city(name, countrycode, district, population) values(?,?,?,?)");
+        stmd_add = con.prepareStatement("INSERT INTO auto(name, PS, kmh ) values(?,?,?)");
      
         } catch (SQLException ex) {
             System.out.println("Verbindung mit dem Datenbankserver "
@@ -317,15 +324,15 @@ public class MainWindow extends javax.swing.JFrame {
             if(res_selectAll.next()){
                 int id = res_selectAll.getInt("ID");
                 String name = res_selectAll.getString("Name");
-                String cc = res_selectAll.getString("Countrycode");
-                String district = res_selectAll.getString("District");
-                int population = res_selectAll.getInt("Population");
+                int ps = res_selectAll.getInt("PS");
+                int kmh = res_selectAll.getInt("kmh");
+                
                 
                 txtID.setText(""+id);
                 txtName.setText(name);
-                txtCountryCode.setText(cc);
-                txtDistrict.setText(district);
-                txtPopulation.setText(""+population);
+                txtPS.setText(""+ps);
+                txtkmh.setText(""+kmh);
+                
             }else{
                 res_selectAll.beforeFirst();
                 
@@ -340,15 +347,14 @@ public class MainWindow extends javax.swing.JFrame {
             if(res_selectAll.previous()){
                 int id = res_selectAll.getInt("ID");
                 String name = res_selectAll.getString("Name");
-                String cc = res_selectAll.getString("Countrycode");
-                String district = res_selectAll.getString("District");
-                int population = res_selectAll.getInt("Population");
+                int ps = res_selectAll.getInt("PS");
+                int kmh = res_selectAll.getInt("kmh");
                 
                 txtID.setText(""+id);
                 txtName.setText(name);
-                txtCountryCode.setText(cc);
-                txtDistrict.setText(district);
-                txtPopulation.setText(""+population);
+                txtPS.setText(""+ps);
+                txtkmh.setText(""+kmh);
+                
             }else{
                 res_selectAll.afterLast();
                 
@@ -363,13 +369,13 @@ public class MainWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnClearActionPerformed
 
-    private void btnAddCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCityActionPerformed
+    private void btnAddAutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddAutoActionPerformed
         try {
         stmd_add.setString(1, txtName.getText());
-        stmd_add.setString(2, txtCountryCode.getText());
-        stmd_add.setString(3, txtDistrict.getText());
-        int population = Integer.parseInt(txtPopulation.getText());
-        stmd_add.setInt( 4,population);
+        stmd_add.setInt(2, Integer.parseInt(txtPS.getText()));
+        stmd_add.setInt(3, Integer.parseInt(txtkmh.getText()));
+        
+        
         
         int rows_changes = stmd_add.executeUpdate();
         if (rows_changes > 0){
@@ -388,7 +394,24 @@ public class MainWindow extends javax.swing.JFrame {
             System.out.println("Neue Stadt konntr nicht eingefuegt werden");
             Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_btnAddCityActionPerformed
+    }//GEN-LAST:event_btnAddAutoActionPerformed
+
+    private void txtkmhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtkmhActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtkmhActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        String sql="delte";
+        try{
+            stmt_selectAll = con.prepareStatement(sql);
+            stmt_selectAll.setString(1, sql);
+        }
+         catch (SQLException ex) {
+            System.out.println("Neue Stadt konntr nicht eingefuegt werden");
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -426,28 +449,27 @@ public class MainWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAddCity;
+    private javax.swing.JButton btnAddAuto;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnClear;
     private javax.swing.JButton btnConnect;
     private javax.swing.JButton btnDisconnect;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JLabel lblCountryCode;
-    private javax.swing.JLabel lblDistrict;
     private javax.swing.JLabel lblID;
     private javax.swing.JLabel lblName;
-    private javax.swing.JLabel lblPopulation;
+    private javax.swing.JLabel lblPS;
     private javax.swing.JLabel lblPort;
     private javax.swing.JLabel lblServer;
-    private javax.swing.JTextField txtCountryCode;
-    private javax.swing.JTextField txtDistrict;
+    private javax.swing.JLabel lblkmh;
     private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtName;
-    private javax.swing.JTextField txtPopulation;
+    private javax.swing.JTextField txtPS;
     private javax.swing.JTextField txtPort;
     private javax.swing.JTextField txtServer;
+    private javax.swing.JTextField txtkmh;
     // End of variables declaration//GEN-END:variables
 }

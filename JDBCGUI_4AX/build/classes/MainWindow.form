@@ -26,8 +26,47 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jSeparator2" max="32767" attributes="0"/>
-                  <Component id="jSeparator1" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jSeparator2" max="32767" attributes="0"/>
+                          <Component id="jSeparator1" max="32767" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblPS" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblID" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblName" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblkmh" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="txtID" min="-2" pref="79" max="-2" attributes="0"/>
+                                  <Component id="txtPS" min="-2" pref="79" max="-2" attributes="0"/>
+                                  <Component id="txtName" min="-2" pref="79" max="-2" attributes="0"/>
+                                  <Component id="txtkmh" alignment="1" min="-2" pref="79" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
+                                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace pref="40" max="32767" attributes="0"/>
+                                      <Component id="btnBack" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="btnAddAuto" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="btnClear" min="-2" pref="65" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" attributes="0">
@@ -44,50 +83,10 @@
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="btnDisconnect" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="btnConnect" min="-2" pref="85" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblCountryCode" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblID" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblName" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblPopulation" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblDistrict" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                              <Component id="txtID" min="-2" pref="79" max="-2" attributes="0"/>
-                              <Component id="txtCountryCode" min="-2" pref="79" max="-2" attributes="0"/>
-                              <Component id="txtName" min="-2" pref="79" max="-2" attributes="0"/>
-                              <Component id="txtDistrict" alignment="1" min="-2" pref="79" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="txtPopulation" alignment="1" min="-2" pref="79" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="btnAddCity" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="btnClear" max="32767" attributes="0"/>
-                                  <Group type="102" attributes="0">
-                                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="btnBack" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
+                          <Component id="btnConnect" alignment="1" min="-2" pref="85" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
@@ -102,10 +101,10 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblServer" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnConnect" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtServer" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnConnect" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblPort" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -119,7 +118,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="txtID" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblID" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnAddCity" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnAddAuto" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -130,18 +129,13 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtCountryCode" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblCountryCode" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtPS" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblPS" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblPopulation" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtDistrict" min="-2" pref="20" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtPopulation" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblDistrict" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblkmh" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtkmh" min="-2" pref="20" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -151,12 +145,15 @@
                           <Component id="btnBack" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="btnClear" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnClear" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jSeparator2" min="-2" pref="10" max="-2" attributes="0"/>
-              <EmptySpace pref="23" max="32767" attributes="0"/>
+              <EmptySpace pref="33" max="32767" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -211,24 +208,22 @@
         <Property name="text" type="java.lang.String" value="Name: "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblCountryCode">
+    <Component class="javax.swing.JLabel" name="lblPS">
       <Properties>
-        <Property name="text" type="java.lang.String" value="CountryCode:"/>
+        <Property name="text" type="java.lang.String" value="PS:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblDistrict">
+    <Component class="javax.swing.JLabel" name="lblkmh">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Population:"/>
+        <Property name="text" type="java.lang.String" value="km/h: "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblPopulation">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="District: "/>
-      </Properties>
+    <Component class="javax.swing.JTextField" name="txtkmh">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtkmhActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtDistrict">
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtCountryCode">
+    <Component class="javax.swing.JTextField" name="txtPS">
     </Component>
     <Component class="javax.swing.JTextField" name="txtID">
       <Properties>
@@ -240,14 +235,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNameActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtPopulation">
-    </Component>
-    <Component class="javax.swing.JButton" name="btnAddCity">
+    <Component class="javax.swing.JButton" name="btnAddAuto">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Add City"/>
+        <Property name="text" type="java.lang.String" value="Add Auto"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddCityActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddAutoActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
@@ -282,6 +275,14 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="custom SQL Statement for SELECT"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Delete"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
